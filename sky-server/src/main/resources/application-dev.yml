@@ -1,0 +1,19 @@
+sky:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    host:
+    port: 3306
+    database: sky_take_out
+    username: root
+    password:
+  alioss:
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    access-key-id:
+    access-key-secret:
+    bucket-name: web-firsttlias
+  redis:
+    host:
+    port: 6379
+    password:
+    database: 10
+  # wechat 配置已弃用
