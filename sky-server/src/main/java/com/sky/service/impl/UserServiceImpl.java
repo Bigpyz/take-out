@@ -55,13 +55,13 @@ public class UserServiceImpl implements UserService {
         if (userMapper.getByUsername(userRegisterDTO.getUsername()) != null) {
             throw new LoginFailedException("用户名已存在");
         }
-//        if (StringUtils.hasText(userRegisterDTO.getPhone()) && userMapper.getByPhone(userRegisterDTO.getPhone()) != null) {
-//            throw new LoginFailedException("手机号已存在");
-//        }
+        if (StringUtils.hasText(userRegisterDTO.getPhone()) && userMapper.getByPhone(userRegisterDTO.getPhone()) != null) {
+            throw new LoginFailedException("手机号已存在");
+        }
 
         User user = User.builder()
                 .username(userRegisterDTO.getUsername())
-//                .phone(userRegisterDTO.getPhone())
+                .phone(userRegisterDTO.getPhone())
                 .password(DigestUtils.md5DigestAsHex(userRegisterDTO.getPassword().getBytes()))
                 .createTime(LocalDateTime.now())
                 .build();
